@@ -1,0 +1,2 @@
+-- Write your PostgreSQL query statement below
+select customer_number from (select customer_number, Count(order_number) order_count from Orders group by customer_number order by order_count desc limit 1)
