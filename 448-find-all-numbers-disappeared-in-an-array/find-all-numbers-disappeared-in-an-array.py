@@ -4,17 +4,10 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        d = {}
-        res = []
-        for i in range(len(nums)):
-            d[i+1] = 0
-        
-        for i in nums:
-            d[i] += 1
+        s = {i for i in nums}
+        not_in = []
 
-        for k,v in d.items():
-            if v == 0:
-                res.append(int(k))
-        
-        return res
-        
+        for i in range(1, len(nums)+1):
+            if i not in s:
+                not_in.append(i)
+        return not_in
