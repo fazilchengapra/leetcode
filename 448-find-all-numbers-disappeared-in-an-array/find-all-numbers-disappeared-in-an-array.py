@@ -4,10 +4,6 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        s = {i for i in nums}
-        not_in = []
+        s = set(nums)
 
-        for i in range(1, len(nums)+1):
-            if i not in s:
-                not_in.append(i)
-        return not_in
+        return [i for i in range(1, len(nums)+1) if i not in s]
